@@ -6,7 +6,6 @@
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": ["es5", "es2015", "dom", "scripthost"],
-    "outDir": "./dist"
+    "lib": ["es5", "es2015", "dom", "scripthost"]
   }
 }

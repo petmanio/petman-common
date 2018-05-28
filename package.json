@@ -2,8 +2,8 @@
   "name": "@petmanio/common",
   "version": "1.0.0",
   "description": "",
-  "main": "dist",
-  "types": "dist",
+  "main": ".",
+  "types": ".",
   "scripts": {
     "build": "tsc",
     "postinstall": "tsc"
