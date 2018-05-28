@@ -10,7 +10,7 @@ export class ShelterDto {
   id: number;
 
   @ApiModelProperty({ type: String })
-  text: string;
+  description: string;
 
   @ApiModelProperty({ type: Number })
   price: number;

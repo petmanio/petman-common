@@ -9,7 +9,7 @@ export class WalkerDto {
   id: number;
 
   @ApiModelProperty({ type: String })
-  text: string;
+  description: string;
 
   @ApiModelProperty({ type: Number })
   price: number;
