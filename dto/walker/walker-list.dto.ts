@@ -6,9 +6,9 @@ import { WalkerDto } from './walker.dto';
 
 export class WalkerListDto {
   @ApiModelProperty({ type: Number })
-  readonly total;
+  total;
 
   @ApiModelProperty({ type: WalkerDto, isArray: true })
   @Type(dtoGetter(WalkerDto))
-  readonly list: WalkerDto[];
+  list: WalkerDto[];
 }

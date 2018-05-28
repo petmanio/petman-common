@@ -4,9 +4,9 @@ import { IsNumberString } from 'class-validator';
 export class ListQueryDto {
   @ApiModelProperty({ type: Number })
   @IsNumberString()
-  readonly offset;
+  offset;
 
   @ApiModelProperty({ type: Number })
   @IsNumberString()
-  readonly limit;
+  limit;
 }

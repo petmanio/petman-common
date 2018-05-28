@@ -4,5 +4,5 @@ import { IsString } from 'class-validator';
 export class LoginFacebookRequestDto {
   @ApiModelProperty({ type: String })
   @IsString()
-  readonly accessToken;
+  accessToken;
 }

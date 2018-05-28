@@ -6,9 +6,9 @@ import { ShelterDto } from './shelter.dto';
 
 export class ShelterListDto {
   @ApiModelProperty({ type: Number })
-  readonly total;
+  total;
 
   @ApiModelProperty({ type: ShelterDto, isArray: true })
   @Type(dtoGetter(ShelterDto))
-  readonly list: ShelterDto[];
+  list: ShelterDto[];
 }
