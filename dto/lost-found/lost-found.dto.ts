@@ -16,9 +16,6 @@ export class LostFoundDto {
   @ApiModelProperty({ type: String })
   description: string;
 
-  @ApiModelProperty({ type: Number })
-  price: number;
-
   @ApiModelProperty({ type: String, isArray: true })
   @Transform(images => map(images, image => '/upload' + image), { groups: ['api'] })
   images: string[];

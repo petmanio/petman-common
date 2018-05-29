@@ -1,10 +1,11 @@
 import { ApiModelProperty } from '@nestjs/swagger';
-import { IsNumberString, IsString } from 'class-validator';
+import { IsString } from 'class-validator';
+import { LostFoundType } from '../../enum/index';
 
 export class LostFoundCreateDto {
-  @ApiModelProperty({ type: String })
-  @IsNumberString()
-  price: number;
+  @ApiModelProperty({ type: LostFoundType })
+  @IsString()
+  type: LostFoundType;
 
   @IsString()
   @ApiModelProperty({ type: String })
