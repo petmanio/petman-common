@@ -4,7 +4,7 @@ export interface JwtPayload {
   id: number;
 }
 
-export interface Geometry {
+export interface Point {
   type: GeometryType;
   coordinates: number[];
 }
