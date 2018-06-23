@@ -1,27 +1,25 @@
 {
-  "name": "@petmanio/common",
+  "name": "@petman/common",
   "version": "1.0.0",
   "description": "",
-  "main": ".",
-  "types": ".",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "postinstall": "tsc"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
-    "typescript": "^2.8.3",
-    "@types/node": "^9.3.0",
     "@nestjs/common": "^5.0.1",
     "@nestjs/swagger": "^2.0.2",
+    "@types/node": "^9.6.20",
     "class-transformer": "^0.1.9",
     "class-validator": "^0.8.5",
     "lodash": "^4.17.10",
-    "postinstall-build": "^5.0.1",
     "reflect-metadata": "^0.1.12",
-    "rxjs": "^6.2.0"
+    "rxjs": "^6.2.0",
+    "typescript": "^2.8.3"
   }
 }
