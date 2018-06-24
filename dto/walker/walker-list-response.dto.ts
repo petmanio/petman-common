@@ -4,7 +4,7 @@ import { Type } from 'class-transformer';
 import { dtoGetter } from '../../lib';
 import { WalkerDto } from './walker.dto';
 
-export class WalkerListDto {
+export class WalkerListResponseDto {
   @ApiModelProperty({ type: Number })
   total;
 

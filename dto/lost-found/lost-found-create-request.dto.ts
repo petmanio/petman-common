@@ -2,7 +2,7 @@ import { ApiModelProperty } from '@nestjs/swagger';
 import { IsString } from 'class-validator';
 import { LostFoundType } from '../../enum/index';
 
-export class LostFoundCreateDto {
+export class LostFoundCreateRequestDto {
   @ApiModelProperty({ type: LostFoundType })
   @IsString()
   type: LostFoundType;

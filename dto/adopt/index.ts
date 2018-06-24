@@ -1,3 +1,3 @@
 export * from './adopt.dto';
-export * from './adopt-create.dto';
-export * from './adopt-list.dto';
+export * from './adopt-create-request.dto';
+export * from './adopt-list-response.dto';

@@ -4,7 +4,7 @@ import { Type } from 'class-transformer';
 import { dtoGetter } from '../../lib';
 import { LostFoundDto } from './lost-found.dto';
 
-export class LostFoundListDto {
+export class LostFoundListResponseDto {
   @ApiModelProperty({ type: Number })
   total;
 

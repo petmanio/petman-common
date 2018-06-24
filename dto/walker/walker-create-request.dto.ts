@@ -1,7 +1,7 @@
 import { ApiModelProperty } from '@nestjs/swagger';
 import { IsNumberString, IsString } from 'class-validator';
 
-export class ShelterCreateDto {
+export class WalkerCreateRequestDto {
   @ApiModelProperty({ type: String })
   @IsNumberString()
   price: number;
@@ -9,9 +9,4 @@ export class ShelterCreateDto {
   @IsString()
   @ApiModelProperty({ type: String })
   description: string;
-
-  // TODO: validate
-  // @IsNotEmpty()
-  @ApiModelProperty({ type: Object, isArray: true })
-  images: any[];
 }
