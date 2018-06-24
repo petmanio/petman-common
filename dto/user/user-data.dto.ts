@@ -30,4 +30,8 @@ export class UserDataDto {
 
   @Exclude()
   deleted: Date;
+
+  get name(): string {
+    return `${this.firstName || ''} ${this.lastName || ''}`;
+  }
 }
