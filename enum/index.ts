@@ -8,8 +8,8 @@ export enum Gender {
 }
 
 export enum Language {
-  EN_US = 'en-US',
-  HY_AM = 'hy-AM'
+  EN = 'en',
+  HY = 'hy'
 }
 
 export enum LostFoundType {
