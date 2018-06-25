@@ -25,7 +25,7 @@ export class UserDto {
       userData.facebook = userData.facebook || getFacebookById(fbAuthProvider.externalId);
     }
     return userData;
-  }, { groups: ['api'] })
+  }, { groups: ['petman-api'] })
   userData: UserDataDto;
 
   @Exclude()

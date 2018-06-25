@@ -16,7 +16,7 @@ export class ShelterDto {
   price: number;
 
   @ApiModelProperty({ type: String, isArray: true })
-  @Transform(images => map(images, image => '/upload' + image), { groups: ['api'] })
+  @Transform(images => map(images, image => '/upload' + image), { groups: ['petman-api'] })
   images: string[];
 
   @ApiModelProperty({ type: UserDto })
