@@ -3,7 +3,7 @@ import { Transform } from 'class-transformer';
 
 import { ListQueryRequestDto } from '../shared';
 
-export class OrganizationListQueryRequestDto extends ListQueryRequestDto {
+export class OrganizationPinsQueryRequestDto extends ListQueryRequestDto {
   @ApiModelProperty({ type: Number, isArray: true, required: false })
   @Transform(services => {
     if (!services) {
