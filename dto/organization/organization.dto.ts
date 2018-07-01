@@ -38,6 +38,9 @@ export class OrganizationDto {
   @Type(dtoGetter(BranchDto))
   branches: BranchDto[];
 
+  @ApiModelProperty({ type: Boolean })
+  isOwner: boolean;
+
   @ApiModelProperty({ type: Date })
   created: Date;
 
