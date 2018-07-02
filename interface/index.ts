@@ -1,12 +1,10 @@
-import { GeometryType } from '../enum';
-
 export interface JwtPayload {
   id: number;
 }
 
 export interface Point {
-  type: GeometryType;
-  coordinates: number[];
+  x: number;
+  y: number;
 }
 
 export interface Pin {

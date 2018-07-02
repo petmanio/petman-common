@@ -6,7 +6,7 @@ import { dtoGetter } from '../../lib';
 import { StateDto } from './state.dto';
 import { CityDto } from './city.dto';
 import { CountryDto } from './country.dto';
-import { Point } from '../../interface';
+import { PointDto } from './point.dto';
 
 export class AddressDto {
   @ApiModelProperty({ type: Number })
@@ -22,7 +22,7 @@ export class AddressDto {
   line3: string;
 
   @ApiModelProperty({ type: Object })
-  point: Point;
+  point: PointDto;
 
   @ApiModelProperty({ type: CityDto })
   @Type(dtoGetter(CityDto))
