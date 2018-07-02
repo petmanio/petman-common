@@ -44,4 +44,15 @@ export class AddressDto {
 
   @Exclude()
   deleted: Date;
+
+  fullAddress?(): string {
+    return `
+      ${this.country ? this.country.name  + ' ' : ''}
+      ${this.state ? this.state.name + ' ' : ''}
+      ${this.city ? this.city.name + ' ' : ''}
+      ${this.line1 ? this.line1 + ' ' : ''}
+      ${this.line2 ? this.line2 + ' ' : ''}
+      ${this.line3 ? this.line3 + ' ' : ''}
+    `;
+  }
 }
