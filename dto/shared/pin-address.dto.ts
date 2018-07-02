@@ -1,6 +1,6 @@
 import { ApiModelProperty } from '@nestjs/swagger';
 
-import { Point } from '../../interface/index';
+import { Point } from '../../interface';
 
 export class PinAddressDto {
   @ApiModelProperty({ type: String })

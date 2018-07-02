@@ -2,10 +2,10 @@ import { ApiModelProperty } from '@nestjs/swagger';
 import { Exclude, Transform, Type } from 'class-transformer';
 import { map } from 'lodash';
 
-import { dtoGetter } from '../../lib/index';
-import { UserDto } from '../user/user.dto';
-import { ServiceDto } from '../service/service.dto';
-import { AddressDto } from '../shared/address.dto';
+import { dtoGetter } from '../../lib';
+import { UserDto } from '../user';
+import { ServiceDto } from '../service';
+import { AddressDto } from '../shared';
 import { BranchDto } from './branch.dto';
 
 export class OrganizationDto {

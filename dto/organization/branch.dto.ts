@@ -2,10 +2,10 @@ import { ApiModelProperty } from '@nestjs/swagger';
 import { Exclude, Transform, Type } from 'class-transformer';
 import { map } from 'lodash';
 
-import { dtoGetter } from '../../lib/index';
-import { ServiceDto } from '../service/service.dto';
-import { AddressDto } from '../shared/address.dto';
-import { OrganizationDto } from './organization.dto';
+import { dtoGetter } from '../../lib';
+import { ServiceDto } from '../service';
+import { AddressDto } from '../shared';
+// import { OrganizationDto } from './organization.dto';
 
 export class BranchDto {
   @ApiModelProperty({ type: Number })
@@ -32,9 +32,10 @@ export class BranchDto {
   @Type(dtoGetter(ServiceDto))
   services: ServiceDto[];
 
-  @ApiModelProperty({ type: OrganizationDto })
-  @Type(dtoGetter(OrganizationDto))
-  organization: OrganizationDto;
+  // FIXME: plainToClass not works on circular dependencies
+  // @ApiModelProperty({ type: OrganizationDto })
+  // @Type(dtoGetter(OrganizationDto))
+  // organization: OrganizationDto;
 
   @ApiModelProperty({ type: Date })
   created: Date;
