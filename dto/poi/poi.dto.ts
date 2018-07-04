@@ -33,6 +33,10 @@ export class PoiDto {
   primaryCategory: CategoryDto[];
 
   // TODO: add type
+  @Type(dtoGetter(PoiDto))
+  main: PoiDto[];
+
+  // TODO: add type
   // @ApiModelProperty({ type: PoiDto, isArray: true })
   @Type(dtoGetter(PoiDto))
   branches: PoiDto[];

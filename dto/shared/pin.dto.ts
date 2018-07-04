@@ -4,7 +4,7 @@ import { AddressDto } from './address.dto';
 
 export class PinDto {
   @ApiModelProperty({ type: String })
-  title: string;
+  name: string;
 
   @ApiModelProperty({ type: String })
   description: string;
