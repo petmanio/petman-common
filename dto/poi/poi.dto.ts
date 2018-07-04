@@ -3,16 +3,15 @@ import { Exclude, Transform, Type } from 'class-transformer';
 import { map } from 'lodash';
 
 import { dtoGetter } from '../../lib';
-import { ServiceDto } from '../service';
-import { AddressDto } from '../shared';
-// import { OrganizationDto } from './organization.dto';
+import { UserDto } from '../user';
+import { AddressDto, CategoryDto } from '../shared';
 
-export class BranchDto {
+export class PoiDto {
   @ApiModelProperty({ type: Number })
   id: number;
 
   @ApiModelProperty({ type: String })
-  title: string;
+  name: string;
 
   @ApiModelProperty({ type: String })
   description: string;
@@ -21,21 +20,24 @@ export class BranchDto {
   @Transform(images => map(images, image => '/upload' + image), { groups: ['petman-api'] })
   images: string[];
 
-  @ApiModelProperty({ type: Boolean, default: false })
-  main: boolean;
-
   @ApiModelProperty({ type: AddressDto })
   @Type(dtoGetter(AddressDto))
   address: AddressDto;
 
-  @ApiModelProperty({ type: ServiceDto, isArray: true })
-  @Type(dtoGetter(ServiceDto))
-  services: ServiceDto[];
+  @ApiModelProperty({ type: UserDto })
+  @Type(dtoGetter(UserDto))
+  user: UserDto;
 
-  // FIXME: plainToClass not works on circular dependencies
-  // @ApiModelProperty({ type: OrganizationDto })
-  // @Type(dtoGetter(OrganizationDto))
-  // organization: OrganizationDto;
+  @ApiModelProperty({ type: CategoryDto })
+  @Type(dtoGetter(CategoryDto))
+  primaryCategory: CategoryDto[];
+
+  @ApiModelProperty({ type: PoiDto, isArray: true })
+  @Type(dtoGetter(PoiDto))
+  branches: PoiDto[];
+
+  @ApiModelProperty({ type: Boolean })
+  isOwner: boolean;
 
   @ApiModelProperty({ type: Date })
   created: Date;

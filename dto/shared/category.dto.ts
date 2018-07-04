@@ -2,12 +2,15 @@ import { ApiModelProperty } from '@nestjs/swagger';
 import { Exclude } from 'class-transformer';
 import { map } from 'lodash';
 
-export class ServiceDto {
+export class CategoryDto {
   @ApiModelProperty({ type: Number })
   id: number;
 
   @ApiModelProperty({ type: String })
-  title: string;
+  label: string;
+
+  @ApiModelProperty({ type: String })
+  name: string;
 
   @ApiModelProperty({ type: String })
   description: string;
