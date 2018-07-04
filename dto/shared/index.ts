@@ -7,4 +7,4 @@ export * from './pin.dto';
 export * from './pin-address.dto';
 export * from './state.dto';
 export * from './category.dto';
-export * from './cateogry-list-response.dto';
+export * from './category-list-response.dto';

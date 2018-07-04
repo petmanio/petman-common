@@ -4,7 +4,7 @@ import { Type } from 'class-transformer';
 import { dtoGetter } from '../../lib';
 import { CategoryDto } from './category.dto';
 
-export class CateogryListResponseDto {
+export class CategoryListResponseDto {
   @ApiModelProperty({ type: Number })
   total;
 
