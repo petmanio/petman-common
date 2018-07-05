@@ -30,7 +30,7 @@ export class PoiDto {
 
   @ApiModelProperty({ type: CategoryDto })
   @Type(dtoGetter(CategoryDto))
-  primaryCategory: CategoryDto[];
+  primaryCategory: CategoryDto;
 
   // TODO: add type
   @Type(dtoGetter(PoiDto))
