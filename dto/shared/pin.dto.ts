@@ -6,6 +6,9 @@ import { AddressDto } from './address.dto';
 import { CategoryDto } from './index';
 
 export class PinDto {
+  @ApiModelProperty({ type: Number })
+  id: number;
+
   @ApiModelProperty({ type: String })
   name: string;
 
