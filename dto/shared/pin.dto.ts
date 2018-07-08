@@ -17,8 +17,8 @@ export class PinDto {
   description: string;
 
   @ApiModelProperty({ type: String })
-  @Transform(icon => '/upload' + icon, { groups: ['petman-api'] })
-  icon: string;
+  @Transform(avatar => '/upload' + avatar, { groups: ['petman-api'] })
+  avatar: string;
 
   @ApiModelProperty({ type: AddressDto })
   @Type(dtoGetter(AddressDto))
