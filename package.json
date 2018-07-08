@@ -8,7 +8,8 @@
     "build": "tsc",
     "prepublish": "npm run build"
   },
-  "author": "",
+  "private": true,
+  "author": "Andranik Antonyan",
   "license": "ISC",
   "devDependencies": {},
   "dependencies": {
