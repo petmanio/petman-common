@@ -16,6 +16,10 @@ export class PoiDto {
   @ApiModelProperty({ type: String })
   description: string;
 
+  @ApiModelProperty({ type: String })
+  @Transform(icon => '/upload' + icon, { groups: ['petman-api'] })
+  icon: string;
+
   @ApiModelProperty({ type: String, isArray: true })
   @Transform(images => map(images, image => '/upload' + image), { groups: ['petman-api'] })
   images: string[];
