@@ -25,7 +25,8 @@ export enum TokenType {
 }
 
 export enum ModalSize {
-  MEDIUM = '350px'
+  MEDIUM = '350px',
+  LARGE = '700px'
 }
 
 export enum UnitType {
