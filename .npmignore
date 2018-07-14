@@ -42,4 +42,5 @@ yarn-error.log
 Thumbs.db
 
 *.ts
+!*.d.ts
 tsconfig.json
