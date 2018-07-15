@@ -1,12 +1,13 @@
 import { ApiModelProperty } from '@nestjs/swagger';
-import { find } from 'lodash';
 import { Type } from 'class-transformer';
+import { ValidateNested } from 'class-validator';
 
 import { dtoGetter } from '../../lib';
-import { UserDataDto } from './user-data.dto';
+import { UserDataUpdateRequestDto } from './user-data-update-request.dto';
 
 export class UserUpdateRequestDto {
-  @ApiModelProperty({ type: UserDataDto })
-  @Type(dtoGetter(UserUpdateRequestDto))
-  userData: UserUpdateRequestDto;
+  @ApiModelProperty({ type: UserDataUpdateRequestDto })
+  @Type(dtoGetter(UserDataUpdateRequestDto))
+  @ValidateNested()
+  userData: UserDataUpdateRequestDto;
 }

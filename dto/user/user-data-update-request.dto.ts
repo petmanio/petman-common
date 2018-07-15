@@ -1,40 +1,23 @@
 import { ApiModelProperty } from '@nestjs/swagger';
-import { IsEnum, IsOptional, IsString, IsUrl, Matches } from 'class-validator';
+import { IsOptional, IsUrl, Matches } from 'class-validator';
 
-import { Gender } from '../../enum';
-import { phoneValidatorRegex } from '../../lib';
+import { facebookUrlValidator, phoneNumberValidatorRegex } from '../../lib';
+import { Transform } from 'class-transformer';
 
 export class UserDataUpdateRequestDto {
-  @ApiModelProperty({ type: Gender })
+  @ApiModelProperty({ type: String, required: false })
   @IsOptional()
-  @IsEnum(Gender)
-  gender: Gender;
+  @Matches(facebookUrlValidator)
+  facebookUrl: string;
 
-  @ApiModelProperty({ type: String })
-  @IsOptional()
-  @IsString()
-  avatar: string;
-
+  @ApiModelProperty({ type: String, required: false })
   @IsOptional()
   @IsUrl()
-  @ApiModelProperty({ type: String })
-  facebook: string;
+  messengerUrl: string;
 
+  @ApiModelProperty({ type: String, required: false })
   @IsOptional()
-  @Matches(phoneValidatorRegex)
-  @ApiModelProperty({ type: String })
-  phone: string;
-
-  @IsOptional()
-  @IsUrl()
-  @ApiModelProperty({ type: String })
-  messenger: string;
-
-  @ApiModelProperty({ type: String })
-  @IsString()
-  firstName: string;
-
-  @ApiModelProperty({ type: String })
-  @IsString()
-  lastName: string;
+  @Matches(phoneNumberValidatorRegex)
+  @Transform(phoneNumber => phoneNumber.replace(/[^+\d]+/g, ""))
+  phoneNumber: string;
 }

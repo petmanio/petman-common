@@ -4,12 +4,14 @@ export const dtoGetter = function(dto) {
   };
 };
 
-export const getUserFbAvatarByFbId = (facebookId: string): string => {
+export const getUserFbAvatarByFbId = (facebookId: number): string => {
   return `https://graph.facebook.com/${facebookId}/picture?type=normal`;
 };
 
-export const getFacebookById = (facebookId: string): string => {
+export const getFacebookById = (facebookId: number): string => {
   return `https://facebook.com/${facebookId}`;
 };
 
-export const phoneValidatorRegex = /^(\([0-9]{3}\)\s*|[0-9]{3}\-)[0-9]{3}-[0-9]{4}$/;
+export const phoneNumberValidatorRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+
+export const facebookUrlValidator = /(?:https?:\/\/)?(?:www\.)?(?:facebook|fb|m\.facebook)\.(?:com|me)\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\-]*\/)*([\w\-\.]+)(?:\/)?/;

@@ -1,18 +1,18 @@
 import { ApiModelProperty } from '@nestjs/swagger';
-import { IsString } from 'class-validator';
-import { LostFoundType } from '../../enum/index';
+import { IsOptional, IsString } from 'class-validator';
+import { LostFoundType } from '../../enum';
 
-export class LostFoundCreateRequestDto {
+export class LostFoundRequestDto {
   @ApiModelProperty({ type: LostFoundType })
   @IsString()
   type: LostFoundType;
 
-  @IsString()
   @ApiModelProperty({ type: String })
+  @IsString()
   description: string;
 
-  // TODO: validate
-  // @IsNotEmpty()
   @ApiModelProperty({ type: Object, isArray: true })
+  // TODO: validate
+  @IsOptional()
   images: any[];
 }
