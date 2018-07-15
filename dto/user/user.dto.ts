@@ -2,7 +2,7 @@ import { ApiModelProperty } from '@nestjs/swagger';
 import { find } from 'lodash';
 import { Exclude, Transform, Type } from 'class-transformer';
 
-import { dtoGetter, getFacebookById, getUserFbAvatarByFbId } from '../../lib';
+import { dtoGetter, getUserFbAvatarByFbId } from '../../lib';
 import { AuthProviderType } from '../../enum';
 import { UserDataDto } from './user-data.dto';
 
@@ -22,7 +22,6 @@ export class UserDto {
     const fbAuthProvider = find(authProviders, provider => provider.type === AuthProviderType.FACEBOOK);
     if (fbAuthProvider) {
       userData.avatar = userData.avatar || getUserFbAvatarByFbId(fbAuthProvider.externalId);
-      userData.facebook = userData.facebook || getFacebookById(fbAuthProvider.externalId);
     }
     return userData;
   }, { groups: ['petman-api'] })
