@@ -11,3 +11,5 @@ export const getUserFbAvatarByFbId = (facebookId: string): string => {
 export const getFacebookById = (facebookId: string): string => {
   return `https://facebook.com/${facebookId}`;
 };
+
+export const phoneValidatorRegex = /^(\([0-9]{3}\)\s*|[0-9]{3}\-)[0-9]{3}-[0-9]{4}$/;
