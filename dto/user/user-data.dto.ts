@@ -14,13 +14,13 @@ export class UserDataDto {
   avatar: string;
 
   @ApiModelProperty({ type: String })
-  facebook: string;
+  facebookUrl: string;
 
   @ApiModelProperty({ type: String })
-  phone: string;
+  messengerUrl: string;
 
   @ApiModelProperty({ type: String })
-  messenger: string;
+  phoneNumber: string;
 
   @ApiModelProperty({ type: String })
   firstName: string;
