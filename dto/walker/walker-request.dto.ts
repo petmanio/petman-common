@@ -1,9 +1,9 @@
 import { ApiModelProperty } from '@nestjs/swagger';
-import { IsNumberString, IsString } from 'class-validator';
+import { IsNumber, IsString } from 'class-validator';
 
 export class WalkerRequestDto {
-  @ApiModelProperty({ type: String })
-  @IsNumberString()
+  @ApiModelProperty({ type: Number })
+  @IsNumber()
   price: number;
 
   @ApiModelProperty({ type: String })

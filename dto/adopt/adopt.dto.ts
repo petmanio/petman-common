@@ -12,9 +12,6 @@ export class AdoptDto {
   @ApiModelProperty({ type: String })
   description: string;
 
-  @ApiModelProperty({ type: Number })
-  price: number;
-
   @ApiModelProperty({ type: String, isArray: true })
   @Transform(images => map(images, image => '/upload' + image), { groups: ['petman-api'] })
   images: string[];
