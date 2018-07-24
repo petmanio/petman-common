@@ -19,9 +19,11 @@ export class UserDto {
   @ApiModelProperty({ type: UserDataDto })
   @Type(dtoGetter(UserDataDto))
   @Transform((userData, { authProviders }) => {
-    const fbAuthProvider = find(authProviders, provider => provider.type === AuthProviderType.FACEBOOK);
-    if (fbAuthProvider) {
-      userData.avatar = userData.avatar || getUserFbAvatarByFbId(fbAuthProvider.externalId);
+    if (!userData.avatar) {
+      const fbAuthProvider = find(authProviders, provider => provider.type === AuthProviderType.FACEBOOK);
+      if (fbAuthProvider) {
+        userData.avatar = getUserFbAvatarByFbId(fbAuthProvider.externalId);
+      }
     }
     return userData;
   }, { groups: ['petman-api'] })

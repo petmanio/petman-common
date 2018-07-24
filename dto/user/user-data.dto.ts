@@ -1,5 +1,5 @@
 import { ApiModelProperty } from '@nestjs/swagger';
-import { Exclude } from 'class-transformer';
+import { Exclude, Transform } from 'class-transformer';
 
 import { Gender } from '../../enum';
 
@@ -11,7 +11,9 @@ export class UserDataDto {
   gender: Gender;
 
   @ApiModelProperty({ type: String })
+  @Transform(avatar => avatar ? '/upload' + avatar : null, { groups: ['petman-api'] })
   avatar: string;
+
 
   @ApiModelProperty({ type: String })
   facebookUrl: string;
