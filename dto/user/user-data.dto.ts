@@ -14,14 +14,16 @@ export class UserDataDto {
   @Transform(avatar => avatar ? '/upload' + avatar : null, { groups: ['petman-api'] })
   avatar: string;
 
-
   @ApiModelProperty({ type: String })
+  @Transform(() => undefined, { groups: ['petman-unauthorised'] })
   facebookUrl: string;
 
   @ApiModelProperty({ type: String })
+  @Transform(() => undefined, { groups: ['petman-unauthorised'] })
   messengerUrl: string;
 
   @ApiModelProperty({ type: String })
+  @Transform(() => undefined, { groups: ['petman-unauthorised'] })
   phoneNumber: string;
 
   @ApiModelProperty({ type: String })
