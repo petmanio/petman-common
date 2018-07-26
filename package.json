@@ -10,16 +10,18 @@
   },
   "author": "Andranik Antonyan",
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/lodash": "^4.14.113",
+    "@types/node": "^10.5.3",
+    "typescript": "^2.9.2"
+  },
   "dependencies": {
     "@nestjs/common": "^5.0.1",
     "@nestjs/swagger": "^2.0.2",
-    "@types/node": "^9.6.20",
     "class-transformer": "^0.1.9",
     "class-validator": "^0.8.5",
     "lodash": "^4.17.10",
     "reflect-metadata": "^0.1.12",
-    "rxjs": "^6.2.0",
-    "typescript": "^2.8.3"
+    "rxjs": "^6.2.0"
   }
 }

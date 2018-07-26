@@ -1,6 +1,5 @@
 import { ApiModelProperty } from '@nestjs/swagger';
 import { Exclude, Type } from 'class-transformer';
-import { map } from 'lodash';
 
 import { dtoGetter } from '../../lib';
 import { StateDto } from './state.dto';
@@ -48,7 +47,6 @@ export class AddressDto {
   fullAddress?(): string {
     return `
       ${this.country ? this.country.name  + ' ' : ''}
-      ${this.state ? this.state.name + ' ' : ''}
       ${this.city ? this.city.name + ' ' : ''}
       ${this.line1 ? this.line1 + ' ' : ''}
       ${this.line2 ? this.line2 + ' ' : ''}
