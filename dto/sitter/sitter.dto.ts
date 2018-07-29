@@ -5,7 +5,7 @@ import { map } from 'lodash';
 import { dtoGetter } from '../../lib';
 import { UserDto } from '../user';
 
-export class ShelterDto {
+export class SitterDto {
   @ApiModelProperty({ type: Number })
   id: number;
 

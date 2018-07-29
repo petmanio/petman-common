@@ -1,7 +1,7 @@
 import { ApiModelProperty } from '@nestjs/swagger';
 import { IsNumberString, IsOptional, IsString } from 'class-validator';
 
-export class ShelterRequestDto {
+export class SitterRequestDto {
   @ApiModelProperty({ type: Number })
   @IsNumberString()
   price: number;
