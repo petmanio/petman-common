@@ -4,8 +4,8 @@ export const dtoGetter = function(dto) {
   };
 };
 
-export const getUserFbAvatarByFbId = (facebookId: number): string => {
-  return `https://graph.facebook.com/${facebookId}/picture?type=normal`;
+export const getUserFbAvatarByFbId = (facebookId: number, type: 'large' | 'normal' | 'small' | 'square' = 'normal'): string => {
+  return `https://graph.facebook.com/${facebookId}/picture?type=${type}`;
 };
 
 export const getFacebookById = (facebookId: number): string => {

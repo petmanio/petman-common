@@ -22,7 +22,7 @@ export class UserDto {
     if (!userData.avatar) {
       const fbAuthProvider = find(authProviders, provider => provider.type === AuthProviderType.FACEBOOK);
       if (fbAuthProvider) {
-        userData.avatar = getUserFbAvatarByFbId(fbAuthProvider.externalId);
+        userData.avatar = getUserFbAvatarByFbId(fbAuthProvider.externalId, 'large');
       }
     }
     return userData;
