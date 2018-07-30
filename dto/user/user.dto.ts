@@ -16,6 +16,9 @@ export class UserDto {
   @Exclude()
   password: string;
 
+  @ApiModelProperty({ type: Boolean })
+  isOwner: boolean;
+
   @ApiModelProperty({ type: UserDataDto })
   @Type(dtoGetter(UserDataDto))
   @Transform((userData, { authProviders }) => {

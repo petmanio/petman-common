@@ -38,3 +38,10 @@ export enum OrganizationPinType {
   ORGANIZATION = 'ORGANIZATION',
   BRANCH = 'BRANCH'
 }
+
+export enum UserApplicationType {
+  SITTERS = 'SITTERS',
+  WALKER = 'WALKERS',
+  LOST_FOUND = 'LOST_FOUND',
+  ADOPTION = 'ADOPTION'
+}
