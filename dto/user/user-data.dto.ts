@@ -1,5 +1,5 @@
 import { ApiModelProperty } from '@nestjs/swagger';
-import { Exclude, Transform } from 'class-transformer';
+import { Exclude, Transform, Type } from 'class-transformer';
 
 import { Gender } from '../../enum';
 
@@ -11,7 +11,9 @@ export class UserDataDto {
   gender: Gender;
 
   @ApiModelProperty({ type: String })
-  @Transform(avatar => avatar ? '/upload' + avatar : null, { groups: ['petman-api'] })
+  @Transform(avatar => (avatar ? '/upload' + avatar : null), {
+    groups: ['petman-api']
+  })
   avatar: string;
 
   @ApiModelProperty({ type: String })
@@ -33,13 +35,14 @@ export class UserDataDto {
   lastName: string;
 
   @ApiModelProperty({ type: Date })
+  @Type(() => Date)
   created: Date;
 
   @ApiModelProperty({ type: Date })
+  @Type(() => Date)
   updated: Date;
 
-  @Exclude()
-  deleted: Date;
+  @Exclude() deleted: Date;
 
   get name(): string {
     return `${this.firstName || ''} ${this.lastName || ''}`;

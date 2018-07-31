@@ -1,6 +1,5 @@
 import { ApiModelProperty } from '@nestjs/swagger';
-import { Exclude } from 'class-transformer';
-import { map } from 'lodash';
+import { Exclude, Type } from 'class-transformer';
 
 export class CategoryDto {
   @ApiModelProperty({ type: Number })
@@ -16,11 +15,12 @@ export class CategoryDto {
   description: string;
 
   @ApiModelProperty({ type: Date })
+  @Type(() => Date)
   created: Date;
 
   @ApiModelProperty({ type: Date })
+  @Type(() => Date)
   updated: Date;
 
-  @Exclude()
-  deleted: Date;
+  @Exclude() deleted: Date;
 }

@@ -13,27 +13,34 @@ export class UserDto {
   @ApiModelProperty({ type: String })
   email: string;
 
-  @Exclude()
-  password: string;
+  @Exclude() password: string;
 
   @ApiModelProperty({ type: Boolean })
   isOwner: boolean;
 
   @ApiModelProperty({ type: UserDataDto })
   @Type(dtoGetter(UserDataDto))
-  @Transform((userData, { authProviders }) => {
-    if (!userData.avatar) {
-      const fbAuthProvider = find(authProviders, provider => provider.type === AuthProviderType.FACEBOOK);
-      if (fbAuthProvider) {
-        userData.avatar = getUserFbAvatarByFbId(fbAuthProvider.externalId, 'large');
+  @Transform(
+    (userData, { authProviders }) => {
+      if (!userData.avatar) {
+        const fbAuthProvider = find(
+          authProviders,
+          provider => provider.type === AuthProviderType.FACEBOOK
+        );
+        if (fbAuthProvider) {
+          userData.avatar = getUserFbAvatarByFbId(
+            fbAuthProvider.externalId,
+            'large'
+          );
+        }
       }
-    }
-    return userData;
-  }, { groups: ['petman-api'] })
+      return userData;
+    },
+    { groups: ['petman-api'] }
+  )
   userData: UserDataDto;
 
-  @Exclude()
-  authProviders;
+  @Exclude() authProviders;
 
   // TODO: add type
   // @ApiModelProperty({ type: UserDto, isArray: true })
@@ -41,11 +48,12 @@ export class UserDto {
   businessUsers: UserDto[];
 
   @ApiModelProperty({ type: Date })
+  @Type(() => Date)
   created: Date;
 
   @ApiModelProperty({ type: Date })
+  @Type(() => Date)
   updated: Date;
 
-  @Exclude()
-  deleted: Date;
+  @Exclude() deleted: Date;
 }

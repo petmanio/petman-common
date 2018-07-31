@@ -16,7 +16,9 @@ export class SitterDto {
   price: number;
 
   @ApiModelProperty({ type: String, isArray: true })
-  @Transform(images => map(images, image => '/upload' + image), { groups: ['petman-api'] })
+  @Transform(images => map(images, image => '/upload' + image), {
+    groups: ['petman-api']
+  })
   images: string[];
 
   @ApiModelProperty({ type: UserDto })
@@ -27,11 +29,12 @@ export class SitterDto {
   isOwner: boolean;
 
   @ApiModelProperty({ type: Date })
+  @Type(() => Date)
   created: Date;
 
   @ApiModelProperty({ type: Date })
+  @Type(() => Date)
   updated: Date;
 
-  @Exclude()
-  deleted: Date;
+  @Exclude() deleted: Date;
 }

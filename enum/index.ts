@@ -40,8 +40,8 @@ export enum OrganizationPinType {
 }
 
 export enum UserApplicationType {
-  SITTERS = 'SITTERS',
-  WALKER = 'WALKERS',
+  SITTER = 'SITTER',
+  WALKER = 'WALKER',
   LOST_FOUND = 'LOST_FOUND',
-  ADOPTION = 'ADOPTION'
+  ADOPT = 'ADOPT'
 }

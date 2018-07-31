@@ -36,17 +36,18 @@ export class AddressDto {
   country: CountryDto;
 
   @ApiModelProperty({ type: Date })
+  @Type(() => Date)
   created: Date;
 
   @ApiModelProperty({ type: Date })
+  @Type(() => Date)
   updated: Date;
 
-  @Exclude()
-  deleted: Date;
+  @Exclude() deleted: Date;
 
   fullAddress?(): string {
     return `
-      ${this.country ? this.country.name  + ' ' : ''}
+      ${this.country ? this.country.name + ' ' : ''}
       ${this.city ? this.city.name + ' ' : ''}
       ${this.line1 ? this.line1 + ' ' : ''}
       ${this.line2 ? this.line2 + ' ' : ''}

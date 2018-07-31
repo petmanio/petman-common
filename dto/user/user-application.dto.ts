@@ -8,9 +8,9 @@ import { LostFoundDto } from '../lost-found';
 import { AdoptDto } from '../adopt';
 
 const typeClassMap = {
-  [UserApplicationType.SITTERS]: SitterDto,
+  [UserApplicationType.SITTER]: SitterDto,
   [UserApplicationType.WALKER]: WalkerDto,
-  [UserApplicationType.ADOPTION]: AdoptDto,
+  [UserApplicationType.ADOPT]: AdoptDto,
   [UserApplicationType.LOST_FOUND]: LostFoundDto
 };
 
