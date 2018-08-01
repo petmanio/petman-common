@@ -47,9 +47,15 @@ export class UserDto {
   @Type(dtoGetter(UserDto))
   businessUsers: UserDto[];
 
+  @ApiModelProperty({ type: Boolean })
+  isSitter: boolean;
+
+  @ApiModelProperty({ type: Boolean })
+  isWalker: boolean;
+
   @ApiModelProperty({ type: Date })
   @Type(() => Date)
-  created: Date;
+  created: Date;  
 
   @ApiModelProperty({ type: Date })
   @Type(() => Date)
