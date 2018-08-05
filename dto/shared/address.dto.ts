@@ -23,6 +23,9 @@ export class AddressDto {
   @ApiModelProperty({ type: Object })
   point: PointDto;
 
+  @ApiModelProperty({ type: String })
+  zipCode: string;
+
   @ApiModelProperty({ type: CityDto })
   @Type(dtoGetter(CityDto))
   city: CityDto;

@@ -45,3 +45,10 @@ export enum UserApplicationType {
   LOST_FOUND = 'LOST_FOUND',
   ADOPT = 'ADOPT'
 }
+
+export enum PetSize {
+  SMALL = 'SMALL',
+  MEDIUM = 'MEDIUM',
+  LARGE = 'LARGE',
+  XL = 'XL'
+}
