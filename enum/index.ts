@@ -46,9 +46,22 @@ export enum UserApplicationType {
   ADOPT = 'ADOPT'
 }
 
+export enum PetType {
+  DOG = 'DOG',
+  CAT = 'CAT',
+  OTHER = 'OTHER'
+}
+
 export enum PetSize {
   SMALL = 'SMALL',
   MEDIUM = 'MEDIUM',
   LARGE = 'LARGE',
   XL = 'XL'
+}
+
+export enum PetAge {
+  BABY = 'BABY',
+  YOUNG = 'YOUNG',
+  ADULT = 'ADULT',
+  SENIOR = 'SENIOR'
 }

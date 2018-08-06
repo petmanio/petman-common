@@ -1,4 +1,5 @@
 export * from './address.dto';
+export * from './address-request.dto';
 export * from './city.dto';
 export * from './country.dto';
 export * from './point.dto';

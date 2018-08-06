@@ -4,6 +4,13 @@ export const dtoGetter = function(dto) {
   };
 };
 
+export const convertQueryItemToList = item => {
+  if (!item) {
+    return [];
+  }
+  return typeof item === 'string' ? [item] : item;
+}
+
 export const getUserFbAvatarByFbId = (facebookId: number, type: 'large' | 'normal' | 'small' | 'square' = 'normal'): string => {
   return `https://graph.facebook.com/${facebookId}/picture?type=${type}`;
 };

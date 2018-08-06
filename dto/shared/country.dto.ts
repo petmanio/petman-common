@@ -1,6 +1,5 @@
 import { ApiModelProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
-import { map } from 'lodash';
 
 import { dtoGetter } from '../../lib';
 import { StateDto } from './state.dto';
