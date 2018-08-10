@@ -3,15 +3,18 @@ import { Exclude, Transform, Type } from 'class-transformer';
 import { map } from 'lodash';
 
 import { dtoGetter } from '../../lib';
-import { UserDto } from '../user/user.dto';
-import { LostFoundType } from '../../enum/index';
+import { UserDto } from '../user';
+import { LostFoundType, PetType } from '../../enum';
 
 export class LostFoundDto {
   @ApiModelProperty({ type: Number })
   id: number;
 
   @ApiModelProperty({ type: LostFoundType })
-  type: LostFoundType;
+  applicationType: LostFoundType;
+
+  @ApiModelProperty({ type: PetType })
+  type: PetType;
 
   @ApiModelProperty({ type: String })
   description: string;
