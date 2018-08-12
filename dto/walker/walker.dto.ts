@@ -2,7 +2,7 @@ import { ApiModelProperty } from '@nestjs/swagger';
 import { Exclude, Type } from 'class-transformer';
 
 import { dtoGetter } from '../../lib';
-import { UserDto } from '../user';
+import { UserDto } from '../user/user.dto';
 
 export class WalkerDto {
   @ApiModelProperty({ type: Number })

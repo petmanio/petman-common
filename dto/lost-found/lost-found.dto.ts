@@ -3,18 +3,13 @@ import { Exclude, Transform, Type } from 'class-transformer';
 import { map } from 'lodash';
 
 import { dtoGetter } from '../../lib';
-import { UserDto } from '../user';
-import { LostFoundType, PetType } from '../../enum';
+// FIXME: import { UserDto } from '../user'; not working
+import { UserDto } from '../user/user.dto';
+import { Gender, LostFoundType, PetAge, PetSize, PetType } from '../../enum';
 
 export class LostFoundDto {
   @ApiModelProperty({ type: Number })
   id: number;
-
-  @ApiModelProperty({ type: LostFoundType })
-  applicationType: LostFoundType;
-
-  @ApiModelProperty({ type: PetType })
-  type: PetType;
 
   @ApiModelProperty({ type: String })
   description: string;
@@ -24,6 +19,32 @@ export class LostFoundDto {
     groups: ['petman-api']
   })
   images: string[];
+
+  @ApiModelProperty({
+    enum: [LostFoundType.FOUND, LostFoundType.LOST]
+  })
+  applicationType: LostFoundType;
+
+  @ApiModelProperty({
+    enum: [PetType.DOG, PetType.CAT, PetType.OTHER],
+    required: false
+  })
+  type: PetType;
+
+  @ApiModelProperty({ enum: [Gender.MALE, Gender.FEMALE], required: false })
+  gender: Gender;
+
+  @ApiModelProperty({
+    enum: [PetSize.XL, PetSize.LARGE, PetSize.MEDIUM, PetSize.SMALL],
+    required: false
+  })
+  size: PetSize;
+
+  @ApiModelProperty({
+    enum: [PetAge.SENIOR, PetAge.ADULT, PetAge.YOUNG, PetAge.BABY],
+    required: false
+  })
+  age: PetAge;
 
   @ApiModelProperty({ type: UserDto })
   @Type(dtoGetter(UserDto))
@@ -40,5 +61,6 @@ export class LostFoundDto {
   @Type(() => Date)
   updated: Date;
 
-  @Exclude() deleted: Date;
+  @Exclude()
+  deleted: Date;
 }
